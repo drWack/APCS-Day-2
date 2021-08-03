@@ -4,6 +4,14 @@ import java.util.*; // ArrayList, Collections, Random
 
 class Main {
 
+  public static void main(String[] args) {
+
+lightBoard testBoard = new lightBoard(5,5);
+  }
+
+
+
+
 static boolean isLeapYear(int year){
   if(year%400==0){return true;}
   else if(year%100==0){return false;}
@@ -30,11 +38,6 @@ static int dayOfWeek(int month, int day, int year){
 
   return (firstWeekday + daysChanged)%7;
 }
-
-  public static void main(String[] args) {
-
-  System.out.println("new main for github");
-  }
 
   
   static int numberOfLeapYears(int firstYear,int secondYear){
@@ -157,11 +160,28 @@ class Delimiter{
 
 }
 class lightBoard{
-private  boolean[][] lights;
+  private  boolean[][] lights;
 
-  public lightBoard(int numRows, int NumCols){
-  
+  public lightBoard(int numRows, int numCols){
+    lights = new boolean[numRows][numCols];
+    Random myrand = new Random();
+    //fill the lgihts with true or false, 40%chance of true
+    for(int i = 0; i < numRows; i++){
+      for(int j =0; j<numCols; j++){
+        if(myrand.nextDouble() < .400){
+          lights[i][j] =true;
+        }
+        else{
+          lights[i][j] = false;
+        }
 
+      }
+    }
+   for(int i = 0; i < numRows; i++){
+      for(int j =0; j<numCols; j++){
+        System.out.println(lights[i][j]);
+      }
+    }
   }
 
-} 
+}
