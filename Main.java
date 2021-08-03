@@ -33,12 +33,7 @@ static int dayOfWeek(int month, int day, int year){
 
   public static void main(String[] args) {
 
-  Random myRandom = new Random();
-  
-  for(int i =0; i <100; i++){
-    System.out.println(myRandom.nextDouble());
-    }
-  
+  System.out.println("new main for github");
   }
 
   
@@ -165,8 +160,8 @@ class lightBoard{
 private  boolean[][] lights;
 
   public lightBoard(int numRows, int NumCols){
-
+  
 
   }
 
-}
+} 
