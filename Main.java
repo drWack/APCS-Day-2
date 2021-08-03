@@ -7,6 +7,7 @@ class Main {
   public static void main(String[] args) {
 
 lightBoard testBoard = new lightBoard(5,5);
+System.out.println(testBoard.evaluateLight(2,3));
   }
 
 
@@ -177,11 +178,42 @@ class lightBoard{
 
       }
     }
-   for(int i = 0; i < numRows; i++){
-      for(int j =0; j<numCols; j++){
-        System.out.println(lights[i][j]);
+  }
+  public boolean evaluateLight(int row, int col){
+
+    boolean status = lights[row][col];
+    int count =0;
+
+    if(status){
+      for(int i =0; i < row; i++){
+        if(lights[i][col]==true){
+          count = count +1;
+        }
+      }
+      if(count%2==0){
+          return false;
+      }
+      else{
+        return true;
       }
     }
+    else{
+      for(int i =0; i < row; i++){
+        if(lights[i][col]==true){
+          count = count +1;
+        }
+      if(count%3==0){
+          return true;
+      }
+      else{
+        return false;
+      }
+    }
+
   }
+  return true;
+  }
+
+
 
 }
